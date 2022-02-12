@@ -1,0 +1,2 @@
+include adddemo/libadd_c.so
+include adddemo/libadd.so
