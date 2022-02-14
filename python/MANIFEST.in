@@ -1,2 +1,1 @@
-include adddemo/libadd_c.so
-include adddemo/libadd.so
+include strprint/libstr_print.so
