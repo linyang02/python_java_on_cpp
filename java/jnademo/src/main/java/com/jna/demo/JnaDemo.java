@@ -4,16 +4,18 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 
 public class JnaDemo {
+    private CLibrary cLibrary;
 
     public interface CLibrary extends Library {
-
-        CLibrary INSTANCE = (CLibrary)Native.loadLibrary("str_print", CLibrary.class);
-
         void str_print(String text);
+    }
+
+    public JnaDemo() {
+        cLibrary = Native.load("str_print", CLibrary.class);
     }
 
     public void str_print(String text)
     {
-        CLibrary.INSTANCE.str_print(text);
+        cLibrary.str_print(text);
     }
 }
